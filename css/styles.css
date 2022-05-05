@@ -10,11 +10,13 @@
   --header-border: #ececec;
   --works-title-border: #f6f6f6;
   --icon-color: #afb1b8;
+  --icon-form-color: #000;
   --action-duration: 250ms;
   --action-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   --doing-item-overlay: rgba(47, 48, 58, 0.8);
   --works-overlay: rgba(33, 150, 243, 0.9);
   --input-border-default: rgba(33, 33, 33, 0.2);
+  --submit-hover-color: #188ce8;
 }
 /* цвет  вторичный   #212121 */
 /* цвет  основной   #757575 */
@@ -605,6 +607,14 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--icon-form-color);
+  fill: currentColor;
+  outline: none;
+  transition: color var(--action-duration) var(--action-timing-function);
+}
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  color: var(--accent-color);
 }
 .is-hidden {
   opacity: 0;
@@ -615,32 +625,40 @@ img {
   transform: scale(4.4, 1.4);
 }
 /* -----------------modal form----------- */
-.modal-form {
+
+.modal-field {
+  margin-bottom: 10px;
 }
-.form-field {
-  display: flex;
-  flex-direction: column;
-  position: relative;
+.modal-field:nth-of-type(4) {
+  margin-bottom: 20px;
 }
 .modal-form-title {
   font-weight: 700;
   font-size: 20px;
   line-height: 1.15;
   color: var(--primary-text-color);
-  margin-bottom: 30px;
+  margin-bottom: 12px;
+}
+.modal-input-wrap {
+  position: relative;
 }
 .form-label {
-  position: absolute;
-  bottom: 44px;
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.01em;
-  /* margin-bottom: 4px; */
+  margin-bottom: 4px;
 }
 .form-input {
-  padding: 11px 20px;
+  display: block;
+  width: 100%;
+  height: 40px;
+  /* font-size: 12px;
+  line-height: 1.17; */
+  padding: 11px 20px 11px 40px;
   border: 1px solid var(--input-border-default);
   border-radius: 4px;
+  outline: none;
+  transition: border-color var(--action-duration) var(--action-timing-function);
 }
 .form-icon {
   display: inline-block;
@@ -648,4 +666,88 @@ img {
   left: 12px;
   top: 50%;
   transform: translateY(-50%);
+  fill: var(--icon-form-color);
+  transition: fill var(--action-duration) var(--action-timing-function);
+}
+.form-area {
+  width: 100%;
+  font-size: 12px;
+  line-height: 1.17;
+  height: 120px;
+  padding: 12px 16px;
+  border: 1px solid var(--input-border-default);
+  border-radius: 4px;
+  resize: none;
+  outline: none;
+  transition: border-color var(--action-duration) var(--action-timing-function);
+}
+.form-input:hover,
+.form-input:focus,
+.form-area:hover,
+.form-area:focus {
+  border-color: var(--accent-color);
+  cursor: pointer;
+}
+.form-input:focus + .form-icon {
+  fill: var(--accent-color);
+}
+.modal-field-checkbox {
+  /* position: relative; */
+  margin-bottom: 30px;
+}
+
+.check-text {
+  font-size: 14px;
+  line-height: 1.71;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.policy-link {
+  color: var(--accent-color);
+  margin-left: 4px;
+}
+.check-text span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 15px;
+  border: 2px solid var(--primary-text-color);
+  border-radius: 3px;
+  margin-right: 8px;
+  transition: background-color var(--action-duration) var(--action-timing-function),
+    border-color var(--action-duration) var(--action-timing-function);
+}
+.icon-check {
+  fill: transparent;
+  transition: fill var(--action-duration) var(--action-timing-function);
+}
+.input-check:checked + .check-text span {
+  border-color: transparent;
+  background-color: var(--accent-color);
+}
+.input-check:checked + .check-text .icon-check {
+  fill: var(--text-overall-color);
+}
+.submit-btn {
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+
+  display: block;
+  margin: 0 auto;
+  letter-spacing: 0.06em;
+  padding: 10px 56px;
+  color: var(--text-overall-color);
+  background: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color var(--action-duration) var(--action-timing-function);
+}
+.submit-btn:hover {
+  background-color: var(--submit-hover-color);
 }
