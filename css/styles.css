@@ -441,6 +441,70 @@ img {
   line-height: 1.14;
   letter-spacing: 0.03em;
 }
+/* -------------------footer form---------------- */
+.subscribe-box {
+  margin-left: auto;
+}
+.subcribe-title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--text-overall-color);
+  margin-bottom: 20px;
+}
+.subcribe-form {
+  display: flex;
+}
+.subscribe-input-wrap {
+  position: relative;
+  margin-right: 12px;
+  cursor: pointer;
+}
+.subscribe-input {
+  width: 358px;
+  height: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  padding-left: 70px;
+  color: var(--accent-color);
+  transition: border-color var(--action-duration) var(--action-timing-function);
+}
+.subscribe-input:hover,
+.subscribe-input:focus {
+  border-color: var(--accent-color);
+}
+.subscribe-input:focus + .subcribe-label {
+  color: var(--accent-color);
+}
+.subcribe-label {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  font-size: 16px;
+  line-height: 1.25;
+  /* display: flex; */
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.6);
+  transition: color var(--action-duration) var(--action-timing-function);
+}
+.subcribe-form .submit-btn {
+  padding: 10px 28px;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+}
+
+.icon-send {
+  margin-left: 10px;
+}
 /* ***********************************portfolio************************************************ */
 
 .portfolio-list {
