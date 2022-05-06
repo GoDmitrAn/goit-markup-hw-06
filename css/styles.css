@@ -471,30 +471,28 @@ img {
   outline: none;
   cursor: pointer;
   background-color: transparent;
-  padding-left: 70px;
-  color: var(--accent-color);
+  padding: 15px;
+
   transition: border-color var(--action-duration) var(--action-timing-function);
 }
 .subscribe-input:hover,
 .subscribe-input:focus {
   border-color: var(--accent-color);
 }
-.subscribe-input:focus + .subcribe-label {
-  color: var(--accent-color);
-}
-.subcribe-label {
-  position: absolute;
-  left: 16px;
-  top: 50%;
-  transform: translateY(-50%);
 
+.subscribe-input,
+.subscribe-input::placeholder {
+  font-weight: 400;
   font-size: 16px;
   line-height: 1.25;
-  /* display: flex; */
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
   transition: color var(--action-duration) var(--action-timing-function);
 }
+.subscribe-input:focus::placeholder {
+  color: var(--accent-color);
+}
+
 .subcribe-form .submit-btn {
   padding: 10px 28px;
   box-shadow: none;
@@ -752,7 +750,8 @@ img {
   border-color: var(--accent-color);
   cursor: pointer;
 }
-.form-input:focus + .form-icon {
+.form-input:focus + .form-icon,
+.form-input:hover + .form-icon {
   fill: var(--accent-color);
 }
 .modal-field-checkbox {
@@ -787,6 +786,9 @@ img {
 .icon-check {
   fill: transparent;
   transition: fill var(--action-duration) var(--action-timing-function);
+}
+.input-check:focus + .check-text span {
+  border-color: var(--accent-color);
 }
 .input-check:checked + .check-text span {
   border-color: transparent;
